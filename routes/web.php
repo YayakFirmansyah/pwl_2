@@ -13,3 +13,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+Route::get('/', function () {
+    return 'selamat datang';
+});
+
+Route::get('/articles', function () {
+    return 'Halaman artikel dengan id';
+});
+
+Route::get('/articles/{id}', function ($id) {
+    return 'Halaman artikel dengan id ' . $id;
+});
