@@ -14,15 +14,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Praktikum 1
+// Route::get('/', function () {
+//     return 'selamat datang';
+// });
 
-Route::get('/', function () {
-    return 'selamat datang';
-});
+// Route::get('/articles', function () {
+//     return 'Halaman artikel dengan id';
+// });
 
-Route::get('/articles', function () {
-    return 'Halaman artikel dengan id';
-});
+// Route::get('/articles/{id}', function ($id) {
+//     return 'Halaman artikel dengan id ' . $id;
+// });
 
-Route::get('/articles/{id}', function ($id) {
-    return 'Halaman artikel dengan id ' . $id;
-});
+//Praktikum 2
+Route::get('/', [PageController::class, 'index']);
+
+Route::get('/about', [PageController::class, 'about']);
+
+Route::get('/articles/{id}', [PageController::class, 'articles']);
