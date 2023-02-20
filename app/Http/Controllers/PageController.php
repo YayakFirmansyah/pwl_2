@@ -6,22 +6,6 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    public function index()
-    {
-        return 'Selamat Datang';
-    }
-
-    public function about()
-    {
-        echo "Nama  : Dhiya'uddin Firmansyah<br>";
-        echo "NIM   : 2141720247";
-    }
-
-    public function articles($id)
-    {
-        return "Halaman Artikel dengan Id " . $id;
-    }
-
     /**
      * Show the form for creating a new resource.
      *
