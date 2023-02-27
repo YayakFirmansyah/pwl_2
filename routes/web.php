@@ -3,9 +3,13 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\PengalamanKuliahController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -91,23 +95,32 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/contact-us', [ContactController::class, 'contacts']);
 
 // Praktikum 1 Minggu 3
-Route::get('/', [HomeController::class, 'index']);
+// Route::get('/', [HomeController::class, 'index']);
 
-Route::prefix('products')->group(function () {
-    Route::get('/', [HomeController::class, 'products']);
+// Route::prefix('products')->group(function () {
+//     Route::get('/', [HomeController::class, 'products']);
 
-    Route::get('/{id}', [HomeController::class, 'subproducts']);
-});
+//     Route::get('/{id}', [HomeController::class, 'subproducts']);
+// });
 
-Route::get('/news', [HomeController::class, 'news']);
+// Route::get('/news', [HomeController::class, 'news']);
 
-Route::get('/news/{news}', [HomeController::class, 'subnews']);
+// Route::get('/news/{news}', [HomeController::class, 'subnews']);
 
-Route::prefix('program')->group(function () {
-    Route::get('/', [HomeController::class, 'program']);
-    Route::get('/{program}', [HomeController::class, 'subprogram']);
-});
+// Route::prefix('program')->group(function () {
+//     Route::get('/', [HomeController::class, 'program']);
+//     Route::get('/{program}', [HomeController::class, 'subprogram']);
+// });
 
-Route::get('/about-us', [HomeController::class, 'about']);
+// Route::get('/about-us', [HomeController::class, 'about']);
 
-Route::get('/contact-us', [ContactController::class, 'contacts']);
+// Route::get('/contact-us', [ContactController::class, 'contacts']);
+
+//Praktikum 2 Minggu 3
+Route::get('/', [DashboardController::class, 'index']);
+
+Route::get('/dashboard', [DashboardController::class, 'index']);
+
+Route::get('/profile', [ProfileController::class, 'index']);
+
+Route::get('/pengalaman-kuliah', [PengalamanKuliahController::class, 'index']);
