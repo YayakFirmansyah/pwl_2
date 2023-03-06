@@ -13,6 +13,9 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="{{ url('pengalaman-kuliah') }}" class="nav-link">Pengalaman Kuliah</a>
       </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="{{ url('kendaraan') }}" class="nav-link">Kendaraan</a>
+      </li>
     </ul>
 
     <!-- Right navbar links -->
