@@ -66,6 +66,14 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="{{ url('hobi') }}" class="nav-link">
+              <i class="nav-icon fas fa-list"></i>
+              <p>
+                Hobi
+              </p>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

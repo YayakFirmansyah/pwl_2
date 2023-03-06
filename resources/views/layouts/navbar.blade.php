@@ -16,6 +16,9 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="{{ url('kendaraan') }}" class="nav-link">Kendaraan</a>
       </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="{{ url('hobi') }}" class="nav-link">Hobi</a>
+      </li>
     </ul>
 
     <!-- Right navbar links -->
