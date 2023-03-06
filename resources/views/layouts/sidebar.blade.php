@@ -43,36 +43,58 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ url('profile') }}" class="nav-link">
-              <i class="nav-icon fas fa-user"></i>
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-circle"></i>
               <p>
-                Profile
+                Pertemuan 1
+                <i class="right fas fa-angle-left"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ url('profile') }}" class="nav-link">
+                  <i class="nav-icon fas fa-user"></i>
+                  <p>
+                    Profile
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('pengalaman-kuliah') }}" class="nav-link">
+                  <i class="nav-icon fas fa-book"></i>
+                  <p>
+                    Pengalaman Kuliah
+                  </p>
+                </a>
+              </li>
+            </ul>
           </li>
           <li class="nav-item">
-            <a href="{{ url('pengalaman-kuliah') }}" class="nav-link">
-              <i class="nav-icon fas fa-book"></i>
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-circle"></i>
               <p>
-                Pengalaman Kuliah
+                Pertemuan 2
+                <i class="right fas fa-angle-left"></i>
               </p>
             </a>
-          </li>
-          <li class="nav-item">
-            <a href="{{ url('kendaraan') }}" class="nav-link">
-              <i class="nav-icon fas fa-car"></i>
-              <p>
-                Kendaraan
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="{{ url('hobi') }}" class="nav-link">
-              <i class="nav-icon fas fa-list"></i>
-              <p>
-                Hobi
-              </p>
-            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ url('kendaraan') }}" class="nav-link">
+                  <i class="nav-icon fas fa-car"></i>
+                  <p>
+                    Kendaraan
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('hobi') }}" class="nav-link">
+                  <i class="nav-icon fas fa-list"></i>
+                  <p>
+                    Hobi
+                  </p>
+                </a>
+              </li>
+            </ul>
           </li>
         </ul>
       </nav>
