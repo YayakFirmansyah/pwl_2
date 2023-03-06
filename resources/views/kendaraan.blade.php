@@ -30,36 +30,37 @@
           <div class="card">
             <div class="card-header">
               <h3 class="card-title">Table Kendaraan</h3>
-    
+
               <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                  <i class="fas fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                  <i class="fas fa-times"></i>
-                </button>
+                <ul class="pagination pagination-sm float-right">
+                  <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+                </ul>
               </div>
             </div>
-            <div class="card-body bg-secondary">
-              <div class="row">
+            <!-- /.card-header -->
+            <div class="card-body p-0">
                 <table class="table">
-                    <tr>
+                    <thead>
                         <th>No</th>
                         <th>Nopol</th>
                         <th>Merk</th>
                         <th>Jenis</th>
                         <th>Tahun Buat</th>
                         <th>Warna</th>
-                    </tr>
+                    </thead>
                     @foreach ($kendaraan as $no => $m)
-                        <tr>
+                        <tbody>
                             <td>{{$no+1}}</td>
                             <td>{{$m->nopol}}</td>
                             <td>{{$m->merk}}</td>
                             <td>{{$m->jenis}}</td>
                             <td>{{$m->tahun_buat}}</td>
                             <td>{{$m->warna}}</td>
-                        </tr>
+                        </tbody>
                     @endforeach
                 </table>
             </div>
