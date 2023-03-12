@@ -42,7 +42,7 @@
               </p>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item menu-is-opening menu-open">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-circle"></i>
               <p>
@@ -69,7 +69,7 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item">
+          <li class="nav-item menu-is-opening menu-open">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-circle"></i>
               <p>
@@ -91,6 +91,22 @@
                   <i class="nav-icon fas fa-list"></i>
                   <p>
                     Hobi
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('keluarga') }}" class="nav-link">
+                  <i class="nav-icon fas fa-user"></i>
+                  <p>
+                    Keluarga
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('mata_kuliah') }}" class="nav-link">
+                  <i class="nav-icon fas fa-calendar"></i>
+                  <p>
+                    Mata Kuliah
                   </p>
                 </a>
               </li>
