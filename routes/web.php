@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HobiController;
@@ -13,6 +14,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\PengalamanKuliahController;
 use App\Http\Controllers\ProfileController;
 use App\Models\HobiModel;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
@@ -122,18 +124,26 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 // Route::get('/contact-us', [ContactController::class, 'contacts']);
 
 //Praktikum 2 Minggu 3
-Route::get('/', [DashboardController::class, 'index']);
 
-Route::get('/dashboard', [DashboardController::class, 'index']);
+Auth::routes();
 
-Route::get('/profile', [ProfileController::class, 'index']);
+Route::get('/logout', [LoginController::class, 'logout']);
 
-Route::get('/pengalaman-kuliah', [PengalamanKuliahController::class, 'index']);
+Route::middleware(['auth'])->group(function() {
 
-Route::get('/kendaraan', [KendaraanController::class, 'index']);
+    Route::get('/', [DashboardController::class, 'index']);
+    
+    Route::get('/dashboard', [DashboardController::class, 'index']);
 
-Route::get('/hobi', [HobiController::class, 'index']);
+    Route::get('/profile', [ProfileController::class, 'index']);
 
-Route::get('/keluarga', [KeluargaController::class, 'index']);
+    Route::get('/pengalaman-kuliah', [PengalamanKuliahController::class, 'index']);
 
-Route::get('/mata_kuliah', [MataKuliahController::class, 'index']);
+    Route::get('/kendaraan', [KendaraanController::class, 'index']);
+
+    Route::get('/hobi', [HobiController::class, 'index']);
+
+    Route::get('/keluarga', [KeluargaController::class, 'index']);
+
+    Route::get('/mata_kuliah', [MataKuliahController::class, 'index']);
+});
