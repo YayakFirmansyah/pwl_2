@@ -48,7 +48,8 @@
                     <th>No</th>
                     <th>NIM</th>
                     <th>Nama</th>
-                    <th>JK</th>
+                    <th>Prodi</th>
+                    <th>Jenis Kelamin</th>
                     <th>HP</th>
                     <th>Action</th>
                 </thead>
@@ -58,6 +59,7 @@
                       <td>{{$no+1}}</td>
                       <td>{{$m->nim}}</td>
                       <td>{{$m->nama}}</td>
+                      <td>{{$m->prodi->prodi}}</td>
                       <td>{{$m->jk}}</td>
                       <td>{{$m->hp}}</td>
                       <td>
@@ -65,7 +67,7 @@
                           <a href="{{ url('/mahasiswa/'.$m->id.'/edit/') }}" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i> Edit</a>
                           @csrf
                           @method('DELETE')
-                          <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Delete</button>
+                          <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')"><i class="fas fa-trash"></i> Delete</button>
                         </form>
                       </td>
                 </tbody>
