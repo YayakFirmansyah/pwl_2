@@ -28,17 +28,7 @@
         <div class="container-fluid">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Kelas : 2B</h3>
-
-              <div class="card-tools">
-                <ul class="pagination pagination-sm float-right">
-                  <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
-                </ul>
-              </div>
+              <h3 class="card-title">Data Mahasiswa</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body p-0">
@@ -49,6 +39,7 @@
                     <th>NIM</th>
                     <th>Nama</th>
                     <th>Prodi</th>
+                    <th>Kelas</th>
                     <th>Jenis Kelamin</th>
                     <th>HP</th>
                     <th>Action</th>
@@ -60,6 +51,7 @@
                       <td>{{$m->nim}}</td>
                       <td>{{$m->nama}}</td>
                       <td>{{$m->prodi->prodi}}</td>
+                      <td>{{$m->kelas->nama_kelas}}</td>
                       <td>{{$m->jk}}</td>
                       <td>{{$m->hp}}</td>
                       <td>
@@ -75,7 +67,11 @@
                 @else
                   <tr><td colspan="6" class="text-center">Data Tidak Ada</td></tr>
                 @endif
-            </table>
+              </table>
+              
+              <div class="card-tools m-3">
+                {{$mhs->links()}}
+              </div>
             </div>
             <!-- /.card-body -->
           </div>

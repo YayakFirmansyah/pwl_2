@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Mahasiswa;
 use App\Models\MahasiswaModel;
 use App\Models\ProdiModel;
+use App\Models\KelasModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -17,7 +18,7 @@ class MahasiswaController extends Controller
      */
     public function index()
     {
-        $mhs = MahasiswaModel::all();
+        $mhs = MahasiswaModel::orderBy('id', 'asc')->paginate(5);
         return view('mahasiswa.mahasiswa')
             ->with('mhs', $mhs);
     }
@@ -30,7 +31,8 @@ class MahasiswaController extends Controller
     public function create()
     {
         $prodi = ProdiModel::all();
-        return view('mahasiswa.create_mahasiswa', ['prodi' => $prodi])
+        $kelas = KelasModel::all();
+        return view('mahasiswa.create_mahasiswa', ['prodi' => $prodi, 'kelas' => $kelas])
             ->with('url_form', url('mahasiswa'));
     }
 
@@ -46,7 +48,8 @@ class MahasiswaController extends Controller
             'nim'           => 'required|string|max:10|unique:mahasiswa,nim',
             'nama'          => 'required|string|max:50',
             'prodi_id'      => 'required',
-            'jk'            => 'required|in:l,p',
+            'kelas_id'      => 'required',
+            'jk'            => 'required|string|max:9',
             'tempat_lahir'  => 'required|string|max:50',
             'tanggal_lahir' => 'required|date',
             'hp'            => 'required|digits_between:6,15',
@@ -117,7 +120,7 @@ class MahasiswaController extends Controller
             'nim'           => 'required|string|max:10|unique:mahasiswa,nim,' . $id,
             'nama'          => 'required|string|max:50',
             'prodi_id'      => 'required',
-            'jk'            => 'required|in:l,p',
+            'jk'            => 'required|string|max:9',
             'tempat_lahir'  => 'required|string|max:50',
             'tanggal_lahir' => 'required|date',
             'hp'            => 'required|digits_between:6,15',
@@ -155,6 +158,7 @@ class MahasiswaController extends Controller
      */
     public function destroy($id)
     {
+        dd($id);
         MahasiswaModel::where('id', '=', $id)->delete();
         return redirect('mahasiswa')
             ->with('success', 'Data Berhasil Dihapus');
